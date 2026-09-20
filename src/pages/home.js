@@ -16,9 +16,8 @@ export default {
     return `
       <section class="hero">
         <a href="/about" data-link class="hero-pill">
-          <span class="hero-pill-avatar"><img src="/avatar.svg" alt="" /></span>
+          <span class="hero-pill-avatar"><img src="/src/img/rishabh.jpeg" alt="Rishabh Tiwari" /></span>
           <span>Rishabh Tiwari</span>
-          <span class="hero-pill-arrow">&rarr;</span>
         </a>
 
         <div class="hero-heading">
