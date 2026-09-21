@@ -184,7 +184,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   object-fit: cover;
   object-position: top left;
   border-radius: var(--radius-m) var(--radius-m) 0 0;
-  filter: saturate(1.05) brightness(0.6) contrast(1.05);
 }
 
 .sidebar-profile {
@@ -859,8 +858,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .footer-copyright-card {
   width: 100%;
-  background: linear-gradient(var(--panel), var(--panel)) padding-box,
-              linear-gradient(135deg, rgba(17, 17, 18, 0.5), var(--line), rgba(17, 17, 18, 0.15)) border-box;
+  background: linear-gradient(to bottom, #f4f4f5, #e4e4e7) padding-box,
+              linear-gradient(to bottom, #d4d4d8, rgba(212,212,216,0.3)) border-box;
   border: 1px solid transparent;
   border-radius: var(--radius-s);
   padding: 18px 24px;
@@ -871,9 +870,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
 }
 .copyright {
-  font-size: 13px;
-  color: var(--ink-soft);
+  font-size: 13.5px;
+  color: #52525b; /* Dark gray for visibility on light bg */
   font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 /* =========================================================
@@ -1006,7 +1006,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   
   /* Reduce sizes and spacing inside mobile sidebar */
   .mobile-sidebar .sidebar-inner { padding: 16px; }
-  .mobile-sidebar .sidebar-banner { height: 130px; }
+  .mobile-sidebar .sidebar-banner { height: 170px; }
   .mobile-sidebar .sidebar-profile { margin-top: -26px; }
   .mobile-sidebar .sidebar-avatar { width: 52px; height: 52px; border-width: 2px; }
   .mobile-sidebar .sidebar-info { padding-top: 12px; }
