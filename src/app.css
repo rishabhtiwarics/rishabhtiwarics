@@ -176,7 +176,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .sidebar-inner { display: flex; flex-direction: column; height: 100%; padding: 16px; gap: 4px; }
 
 .sidebar-top { position: relative; }
-.sidebar-banner { height: 130px; overflow: hidden; border-radius: var(--radius-m) var(--radius-m) 0 0; position: relative; }
+.sidebar-banner { height: 178px; overflow: hidden; border-radius: var(--radius-m) var(--radius-m) 0 0; position: relative; }
 .sidebar-banner-img {
   width: 100%;
   height: 100%;
@@ -186,27 +186,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: var(--radius-m) var(--radius-m) 0 0;
   filter: saturate(1.05) brightness(0.6) contrast(1.05);
 }
-/* light blur fade at the bottom edge of the banner */
-.sidebar-banner::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 48%;
-  pointer-events: none;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 100%);
-  mask-image: linear-gradient(to top, #000 0%, transparent 100%);
-}
+
 .sidebar-profile {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 12px;
-  padding: 0 4px;
-  margin-top: -32px;
-  position: relative;
+  padding: 0 16px 12px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 0;
+  z-index: 10;
 }
 .sidebar-avatar {
   width: 64px; height: 64px;
@@ -216,7 +207,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: var(--dark-2);
   flex-shrink: 0;
 }
-.sidebar-info { padding-top: 28px; }
+.sidebar-info { padding-top: 0; padding-bottom: 4px; }
 .sidebar-name { color: #fff; font-size: 15px; font-weight: 600; letter-spacing: -0.02em; }
 .role-badge {
   display: inline-flex;
@@ -965,7 +956,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     left: 16px;
     width: 300px;
     max-width: calc(100vw - 32px);
-    height: auto;
+    height: 100%;
+    max-height: calc(100vh - 32px);
     z-index: 100;
     transform: translateX(calc(-100% - 16px));
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0.4s;
@@ -993,4 +985,36 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .timeline-card, .info-card, .form-card, .contact-card { padding: 24px; }
   .footer-actions { width: 100%; flex-direction: column; }
   .footer-btn { width: 100%; }
+}
+
+@media (max-width: 425px) {
+  /* Centered popup sidebar panel */
+  .mobile-sidebar {
+    top: 50%;
+    left: 50%;
+    bottom: auto;
+    width: 290px;
+    transform: translate(-50%, -50%) scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, visibility 0s linear 0.3s;
+    opacity: 0;
+  }
+  .mobile-header.open .mobile-sidebar {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, visibility 0s linear 0s;
+  }
+  
+  /* Reduce sizes and spacing inside mobile sidebar */
+  .mobile-sidebar .sidebar-inner { padding: 16px; }
+  .mobile-sidebar .sidebar-banner { height: 130px; }
+  .mobile-sidebar .sidebar-profile { margin-top: -26px; }
+  .mobile-sidebar .sidebar-avatar { width: 52px; height: 52px; border-width: 2px; }
+  .mobile-sidebar .sidebar-info { padding-top: 12px; }
+  .mobile-sidebar .sidebar-name { font-size: 14px; }
+  .mobile-sidebar .sidebar-body { padding-top: 16px; margin-top: 12px; padding-bottom: 12px; }
+  .mobile-sidebar .sidebar-bio { margin-bottom: 12px; font-size: 12px; }
+  .mobile-sidebar .nav-link { padding: 8px 12px; font-size: 13px; }
+  .mobile-sidebar .sidebar-bottom { gap: 10px; padding-top: 12px; padding-bottom: 8px; }
+  .mobile-sidebar .socials { height: 40px; }
+  .mobile-sidebar .btn-book { height: 42px; font-size: 13px; }
 }
