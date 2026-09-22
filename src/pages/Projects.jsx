@@ -1,14 +1,71 @@
 import React from "react";
 import { projects } from "../data/projects.js";
 
+const orbitImages = [
+  "https://lordoffragrance.vercel.app/assets/logo-bhOzWs4J.png",
+  "https://scentofsurrender.vercel.app/assets/SOS_Logo_main-Ct7QDk5D.png",
+  "https://tutorialforgeeks.com/assets/image/WhatsApp_Image_2026-01-19_at_9.42.46_PM_1_-removebg-preview-removebg-preview.png",
+  "https://aromus.vercel.app/img/logo.png",
+  "https://paramayu.vercel.app/logo-paramayu.jpeg",
+  "https://ministryperfume.vercel.app/assets/ministry_black_logo-DgPjcI0a.png",
+  "https://avenlora.vercel.app/assets/avenlora-main-logo-C5wd2QJt.png",
+  "https://pulpayurveda.vercel.app/img/logo.png",
+  "https://www.intunefoods.ca/shared/images/INTUNE-FOODS-Logo.svg",
+  "https://astonreed.vercel.app/assets/logo-D89ihoBm.png",
+  "https://www.nirogyamwellness.com/Images/logo.png",
+  "https://www.thirdeyescent.com/img/logo/logo.png",
+  "https://elvare-paris-frontend.vercel.app/assets/logo.png",
+  // Repeated to reduce gaps
+  "https://lordoffragrance.vercel.app/assets/logo-bhOzWs4J.png",
+  "https://scentofsurrender.vercel.app/assets/SOS_Logo_main-Ct7QDk5D.png",
+  "https://tutorialforgeeks.com/assets/image/WhatsApp_Image_2026-01-19_at_9.42.46_PM_1_-removebg-preview-removebg-preview.png",
+  "https://aromus.vercel.app/img/logo.png",
+  "https://paramayu.vercel.app/logo-paramayu.jpeg",
+  "https://ministryperfume.vercel.app/assets/ministry_black_logo-DgPjcI0a.png",
+  "https://avenlora.vercel.app/assets/avenlora-main-logo-C5wd2QJt.png",
+  "https://pulpayurveda.vercel.app/img/logo.png",
+  "https://www.intunefoods.ca/shared/images/INTUNE-FOODS-Logo.svg",
+  "https://astonreed.vercel.app/assets/logo-D89ihoBm.png",
+  "https://www.nirogyamwellness.com/Images/logo.png",
+  "https://www.thirdeyescent.com/img/logo/logo.png",
+  "https://elvare-paris-frontend.vercel.app/assets/logo.png"
+];
+
 export default function Projects() {
   return (
     <>
-      <section className="section page-head">
-        <div className="section-top">
-          <span className="eyebrow">Projects</span>
-          <h1 className="page-title">My Projects</h1>
-          <p className="page-lead">A collection of the websites and web apps I've built.</p>
+      <section className="orbit-hero-section">
+        <div className="orbit-hero">
+          
+          <div className="orbit-ring-container">
+            <div className="orbit-ring-spin">
+              {orbitImages.map((src, i) => {
+                const needsInvert = src.includes("pulpayurveda.vercel.app") || src.includes("lordoffragrance.vercel.app");
+                return (
+                  <div 
+                    key={i} 
+                    className="orbit-item"
+                    style={{ transform: `translate(-50%, -50%) rotate(${i * (360 / orbitImages.length)}deg) translateY(-45.5cqmin)` }}
+                  >
+                    <div className="orbit-item-inner">
+                      <img 
+                        src={src} 
+                        alt="" 
+                        draggable="false" 
+                        style={needsInvert ? { filter: 'invert(1)' } : {}}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="orbit-center-text">
+            <span className="eyebrow">Projects</span>
+            <h2>A collection of websites, web apps, and digital experiences I've built.</h2>
+          </div>
+
         </div>
       </section>
 

@@ -2523,3 +2523,127 @@ button {
     display: none;
   }
 }
+
+/* =========================================================
+   ORBIT HERO (Projects Page)
+========================================================= */
+.orbit-hero-section {
+  width: 100%;
+  padding-top: 0;
+  background: var(--bg);
+  position: relative;
+}
+
+.orbit-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 1; 
+  min-height: 350px;
+  user-select: none;
+  touch-action: none;
+  cursor: grab;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 48px;
+}
+
+.orbit-hero:active {
+  cursor: grabbing;
+}
+
+.orbit-ring-container {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  min-width: 650px;
+  max-width: 950px;
+  aspect-ratio: 1 / 1;
+  container-type: size;
+}
+
+.orbit-ring-spin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0px;
+  height: 0px;
+  animation: framer-orbit-ring-spin 40s linear infinite;
+  will-change: transform;
+}
+
+@keyframes framer-orbit-ring-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.orbit-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.orbit-item-inner {
+  width: 11cqmin;
+  height: 11cqmin;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.orbit-item-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.orbit-center-text {
+  position: relative;
+  z-index: 50;
+  text-align: center;
+  max-width: 600px;
+  padding: 0 24px;
+}
+
+.orbit-center-text h2 {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.orbit-center-text p {
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .orbit-hero {
+    aspect-ratio: 1 / 1.2;
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 95%);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 95%);
+  }
+  .orbit-item-inner {
+    width: 14cqmin;
+    height: 14cqmin;
+    border-radius: 12px;
+  }
+}
