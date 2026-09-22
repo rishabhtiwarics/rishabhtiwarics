@@ -223,6 +223,13 @@ button {
   height: 100%;
   padding: 16px;
   gap: 4px;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.sidebar-inner::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
 
 .sidebar-top {
