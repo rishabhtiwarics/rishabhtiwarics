@@ -1,106 +1,219 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { profile } from "../data/profile.js";
+import { profile, skills, experience, education } from "../data/profile.js";
+import rishabhImg from "../img/aboutimges.png";
+import heyImg from "../img/hey.png";
+
+const services = [
+  { icon: "💻", title: "Web Development",     desc: "Building performant React & Next.js apps that scale — from landing pages to full-featured platforms." },
+  { icon: "🎨", title: "UI / UX Design",       desc: "Pixel-perfect Figma designs with sharp typography, color, and interaction principles." },
+  { icon: "⚡", title: "Frontend Engineering", desc: "Clean, maintainable code using modern JS, TypeScript, Redux, and component-driven architecture." },
+  { icon: "📱", title: "Responsive Layouts",   desc: "Fluid layouts on every device using CSS Grid, Flexbox, Tailwind, and Bootstrap." },
+];
+
+const techLogos = ["HTML", "CSS", "Tailwind CSS", "Bootstrap", "JavaScript", "Figma", "React.js", "Next.js", "Redux", "Postman", "Git"];
 
 export default function About() {
   return (
     <>
-      <section className="section page-head">
-        <div className="section-top">
-          <span className="eyebrow">About Me</span>
-          <h1 className="page-title">Who I Am</h1>
-          <p className="page-lead">
-            Experienced frontend developer with passion for creating attractive and interactive websites meeting customer needs and exceeding expectations. Well-versed in developing React.js and Next.js based websites and web apps.
-          </p>
+      {/* ═══ HERO ═══ */}
+      <div className="ab-hero">
+
+        {/* Greeting */}
+        <p className="ab-greeting">
+          <img src={heyImg} alt="Hey" className="ab-wave-img" />
+          Hi, my name is Rishabh <span className="ab-hide-mobile">and I am a freelance</span>
+        </p>
+
+        {/* Big headline — two lines */}
+        <div className="ab-headline">
+
+          {/* Line 1 — solid: "Web Designer ●" */}
+          <div className="ab-line1">
+            Web Designer
+            <span className="ab-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </span>
+          </div>
+
+          {/* Line 2 — ghost outline, smaller */}
+          <div className="ab-line2">&amp; Frontend Developer</div>
         </div>
-        <div className="section-actions">
+
+        {/* Centered floating photo — sits between line1 bottom & line2 */}
+        <div className="ab-photo-wrap">
+          <img src={rishabhImg} alt="Rishabh Tiwari" />
+        </div>
+
+        {/* Location + tech logos */}
+        <div className="ab-info-row">
+          <p className="ab-subline">based in Rewa, Madhya Pradesh.</p>
+          <div className="ab-logos">
+            <div className="ab-logos-track">
+              {techLogos.map((tech, i) => <span key={i}>{tech}</span>)}
+              {techLogos.map((tech, i) => <span key={`dup-${i}`}>{tech}</span>)}
+            </div>
+          </div>
+        </div>
+
+        {/* CTA buttons */}
+        <div className="ab-cta-row">
           <Link to="/contact" className="btn btn-dark">
             <svg className="icon btn-icon" aria-hidden="true"><use href="#i-send" /></svg>
             <span>Hire Me</span>
           </Link>
+          <Link to="/projects" className="btn btn-light">
+            <span>View Work →</span>
+          </Link>
         </div>
-      </section>
+      </div>
 
-      <div className="divider"></div>
+      <div className="divider" />
 
+      {/* ═══ INFO CARD ═══ */}
       <section className="section">
-        <div className="info-card">
-          <div className="info-head">
-            <h2>{profile.name}</h2>
-            <p>{profile.role}</p>
+        <div className="ab-info-card">
+          <div className="ab-info-head">
+            <h2 className="ab-info-name">{profile.name}</h2>
+            <p className="ab-info-role">{profile.role} — Available for Freelance</p>
           </div>
-          <ul className="info-list">
-            <li className="info-row">
-              <span className="info-label">Age</span>
-              <span className="info-value">24</span>
-            </li>
-            <li className="info-row">
-              <span className="info-label">Residence</span>
-              <span className="info-value">Rewa Madhya Pradesh</span>
-            </li>
-            <li className="info-row">
-              <span className="info-label">Freelance</span>
-              <span className="info-value info-value--status">
-                <span className="status-dot--inline">
-                  <span className="status-dot-core"></span>
-                </span>
-                Available
+
+          {/* Left column */}
+          <div className="ab-info-col">
+            <div className="ab-info-row-item">
+              <span className="ab-info-label">Age</span>
+              <span className="ab-info-value">24</span>
+            </div>
+            <div className="ab-info-row-item">
+              <span className="ab-info-label">Residence</span>
+              <span className="ab-info-value">Rewa, Madhya Pradesh</span>
+            </div>
+            <div className="ab-info-row-item">
+              <span className="ab-info-label">Freelance</span>
+              <span className="ab-info-value">
+                <span className="ab-status"><span className="ab-dot" /> Available</span>
               </span>
-            </li>
-            <li className="info-row">
-              <span className="info-label">Address</span>
-              <span className="info-value">{profile.address}</span>
-            </li>
-            <li className="info-row">
-              <span className="info-label">Phone</span>
-              <a className="info-value" href={`tel:${profile.phoneHref}`}>{profile.phone}</a>
-            </li>
-            <li className="info-row">
-              <span className="info-label">E-mail</span>
-              <a className="info-value" href={`mailto:${profile.email}`}>{profile.email}</a>
-            </li>
-          </ul>
+            </div>
+          </div>
+
+          {/* Right column */}
+          <div className="ab-info-col">
+            <div className="ab-info-row-item">
+              <span className="ab-info-label">Address</span>
+              <span className="ab-info-value">{profile.address}</span>
+            </div>
+            <div className="ab-info-row-item">
+              <span className="ab-info-label">Phone</span>
+              <a className="ab-info-value" href={`tel:${profile.phoneHref}`}>{profile.phone}</a>
+            </div>
+            <div className="ab-info-row-item">
+              <span className="ab-info-label">E-mail</span>
+              <a className="ab-info-value" href={`mailto:${profile.email}`}>{profile.email}</a>
+            </div>
+          </div>
         </div>
       </section>
 
-      <div className="divider"></div>
+      <div className="divider" />
 
+      {/* ═══ WHAT I DO ═══ */}
       <section className="section">
         <div className="section-top">
           <span className="eyebrow">What I Do</span>
+          <h2 className="ab-section-h2">Building great digital products<br />from concept to code.</h2>
         </div>
-        <div className="cards-2">
-          <div className="info-tile">
-            <span className="tile-icon">
-              <svg className="icon" aria-hidden="true"><use href="#i-monitor" /></svg>
-            </span>
-            <h3>Web Development</h3>
-            <p>The process of building and maintaining websites and web applications for the internet or an intranet.</p>
+        <div className="ab-do-grid">
+          {services.map((svc, i) => (
+            <div key={i} className="ab-do-card">
+              <div className="ab-do-icon">{svc.icon}</div>
+              <div>
+                <p className="ab-do-title">{svc.title}</p>
+                <p className="ab-do-desc">{svc.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      {/* ═══ SKILLS ═══ */}
+      <section className="section">
+        <div className="section-top">
+          <span className="eyebrow">My Toolkit</span>
+          <h2 className="ab-section-h2">Well-versed in React, Next.js,<br />Figma, HTML &amp; CSS.</h2>
+        </div>
+        <div className="ab-skills-grid">
+          {skills.map(sk => (
+            <div key={sk.name} className="ab-skill-card">
+              <span className="ab-skill-name">{sk.name}</span>
+              <div className="ab-skill-bar">
+                <div className="ab-skill-fill" style={{ width: `${sk.level}%` }} />
+              </div>
+              <span className="ab-skill-pct">{sk.level}%</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      {/* ═══ EXPERIENCE & EDUCATION ═══ */}
+      <section className="section">
+        <div className="ab-tl-grid">
+          <div>
+            <span className="eyebrow ab-tl-eyebrow">Experience</span>
+            <div className="ab-timeline">
+              {experience.map((ex, i) => (
+                <div key={i} className="ab-tl-item">
+                  <div className="ab-tl-dot" />
+                  <div>
+                    <p className="ab-tl-title">{ex.title}</p>
+                    <p className="ab-tl-place">{ex.place}</p>
+                    <p className="ab-tl-dates">{ex.dates}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="info-tile">
-            <span className="tile-icon">
-              <svg className="icon" aria-hidden="true"><use href="#i-layout" /></svg>
-            </span>
-            <h3>Website Design</h3>
-            <p>Website design is the process of creating a website's appearance, layout, and content.</p>
+          <div>
+            <span className="eyebrow ab-tl-eyebrow">Education</span>
+            <div className="ab-timeline">
+              {education.map((ed, i) => (
+                <div key={i} className="ab-tl-item">
+                  <div className="ab-tl-dot" />
+                  <div>
+                    <p className="ab-tl-title">{ed.title}</p>
+                    <p className="ab-tl-place">{ed.place}</p>
+                    <p className="ab-tl-dates">{ed.dates}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <div className="divider"></div>
+      <div className="divider" />
 
-      <section className="section">
-        <div className="section-top">
-          <span className="eyebrow">My Experience</span>
-          <h2 className="toolkits-heading">
-            Well-versed in developing React.js and Next.js based websites. Excels in JavaScript, Figma, HTML and CSS development.
-          </h2>
-        </div>
-        <div className="tag-list">
-          <span className="tag">HTML</span>
-          <span className="tag">React</span>
-          <span className="tag">Figma</span>
-          <span className="tag">Bootstrap</span>
+      {/* ═══ BOTTOM CTA ═══ */}
+      <section className="section ab-cta-section">
+        <p className="ab-cta-sup">Ready to build something?</p>
+        <h2 className="ab-cta-heading">
+          Let's work<br />
+          <span className="ab-cta-ghost">together.</span>
+        </h2>
+        <div className="ab-cta-btns">
+          <Link to="/contact" className="btn btn-dark">
+            <svg className="icon btn-icon" aria-hidden="true"><use href="#i-send" /></svg>
+            <span>Send a Message</span>
+          </Link>
+          <a href={`mailto:${profile.email}`} className="btn btn-light">
+            <span>{profile.email}</span>
+          </a>
         </div>
       </section>
     </>
