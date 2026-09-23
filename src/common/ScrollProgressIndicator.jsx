@@ -15,7 +15,7 @@ export default function ScrollProgressIndicator() {
       const scrollableHeight = scrollHeight - clientHeight;
       const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
 
-      thumb.style.transform = `translateY(${Math.min(progress, 1) * 100 - 100}%)`;
+      thumb.style.transform = `scaleY(${Math.min(Math.max(progress, 0), 1)})`;
     };
 
     const requestUpdate = () => {
