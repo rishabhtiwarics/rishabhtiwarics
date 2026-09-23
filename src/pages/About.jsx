@@ -4,12 +4,7 @@ import { profile, skills, experience, education } from "../data/profile.js";
 import rishabhImg from "../img/aboutimges.png";
 import heyImg from "../img/hey.png";
 
-const services = [
-  { icon: "💻", title: "Web Development",     desc: "Building performant React & Next.js apps that scale — from landing pages to full-featured platforms." },
-  { icon: "🎨", title: "UI / UX Design",       desc: "Pixel-perfect Figma designs with sharp typography, color, and interaction principles." },
-  { icon: "⚡", title: "Frontend Engineering", desc: "Clean, maintainable code using modern JS, TypeScript, Redux, and component-driven architecture." },
-  { icon: "📱", title: "Responsive Layouts",   desc: "Fluid layouts on every device using CSS Grid, Flexbox, Tailwind, and Bootstrap." },
-];
+
 
 const techLogos = ["HTML", "CSS", "Tailwind CSS", "Bootstrap", "JavaScript", "Figma", "React.js", "Next.js", "Redux", "Postman", "Git"];
 
@@ -96,27 +91,50 @@ export default function About() {
       <div className="divider" />
 
       {/* ═══ WHAT I DO ═══ */}
-      <section className="section">
+      <section className="section ab-wid-section">
         <div className="section-top">
           <span className="eyebrow">What I Do</span>
-          <h2 className="ab-section-h2">Building great digital products<br />from concept to code.</h2>
+          <h2 className="ab-section-h2">Building Great Digital Products.</h2>
         </div>
-        <div className="ab-do-grid">
-          {services.map((svc, i) => (
-            <div key={i} className="ab-do-card">
-              <div className="ab-do-icon">{svc.icon}</div>
-              <div>
-                <p className="ab-do-title">{svc.title}</p>
-                <p className="ab-do-desc">{svc.desc}</p>
-              </div>
+
+        <div className="ab-wid-grid">
+          <div className="ab-wid-main">
+            <div className="ab-wid-main-icon">
+              <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </div>
-          ))}
+            <h3>Web Development</h3>
+            <p>Building performant React &amp; Next.js apps that scale — from landing pages to full-featured platforms.</p>
+          </div>
+
+          <div className="ab-wid-side">
+            <div className="ab-wid-side-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg>
+            </div>
+            <h3>UI / UX Design</h3>
+            <p>Pixel-perfect Figma designs with sharp typography, color, and interaction principles.</p>
+          </div>
+
+          <div className="ab-wid-side is-dark">
+            <div className="ab-wid-side-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 17V7a2 2 0 0 1 2-2h6l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/></svg>
+            </div>
+            <h3>Frontend Engineering</h3>
+            <p>Clean, maintainable code using modern JS, TypeScript, Redux, and component-driven architecture.</p>
+          </div>
+        </div>
+
+        <div className="ab-wid-full">
+          <div className="ab-wid-side">
+            <div className="ab-wid-side-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+            </div>
+            <h3>Responsive Layouts</h3>
+            <p>Fluid layouts on every device using CSS Grid, Flexbox, Tailwind, and Bootstrap.</p>
+          </div>
         </div>
       </section>
 
       <div className="divider" />
-
-      {/* ═══ SKILLS ═══ */}
       <section className="section">
         <div className="section-top">
           <span className="eyebrow">My Toolkit</span>

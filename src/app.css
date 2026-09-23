@@ -946,7 +946,8 @@ button {
 .section-top {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
 .section-top--center {
@@ -2451,9 +2452,9 @@ button {
   font-weight: 600;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   .biz-card {
-    padding: 22px 20px;
+    padding: 24px 22px;
     flex-direction: column;
     align-items: flex-start;
     gap: 18px;
@@ -2467,65 +2468,176 @@ button {
   }
 }
 
+@media (max-width: 425px) {
+  .biz-card {
+    padding: 20px 16px;
+  }
+}
+
 /* Section subheading */
 .ab-section-h2 {
   font-size: clamp(22px, 3.5vw, 40px);
   font-weight: 800;
   letter-spacing: -0.04em;
   color: var(--ink);
-  margin-top: 16px;
+  margin-top: 4px;
 }
 
-/* Service cards */
-.ab-do-grid {
+/* Bento Grid WHAT I DO Section */
+.ab-wid-section {
+  gap: 5px !important;
+}
+
+.ab-wid-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 16px;
+  grid-template-columns: 1.3fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 14px;
   width: 100%;
 }
 
-.ab-do-card {
-  background: var(--panel-2);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-m);
-  padding: 28px 28px 32px;
+.ab-wid-main {
+  grid-row: 1 / 3;
+  background: var(--dark);
+  color: #fff;
+  border-radius: var(--radius-l);
+  padding: 28px;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  transition: border-color .2s, transform .2s;
-  cursor: default;
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+  background-image:
+    linear-gradient(180deg, rgba(17,17,18,.35), rgba(17,17,18,.9)),
+    url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
 }
 
-.ab-do-card:hover {
-  border-color: var(--ink);
-  transform: translateY(-4px);
+.ab-wid-main > * {
+  position: relative;
+  z-index: 1;
 }
 
-.ab-do-icon {
+.ab-wid-main-icon {
   width: 44px;
   height: 44px;
-  border-radius: var(--radius-xs);
-  background: var(--ink);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 22px;
 }
 
-.ab-do-title {
-  font-size: 16px;
+.ab-wid-main-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ab-wid-main h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.ab-wid-main p {
+  font-size: 13.5px;
+  color: var(--ink-faint);
+  line-height: 1.6;
+  margin-top: auto;
+}
+
+.ab-wid-side {
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ab-wid-side-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ab-wid-side-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ab-wid-side h3 {
+  font-size: 15px;
   font-weight: 700;
   color: var(--ink);
-  letter-spacing: -0.02em;
 }
 
-.ab-do-desc {
-  font-size: 14px;
+.ab-wid-side p {
+  font-size: 13px;
   color: var(--ink-soft);
-  line-height: 1.6;
-  margin-top: 8px;
+  line-height: 1.5;
 }
+
+.ab-wid-full {
+  margin-top: 14px;
+  width: 100%;
+}
+
+.ab-wid-side.is-dark {
+  background: linear-gradient(135deg, var(--dark) 0%, #3f3f46 100%);
+  border-color: var(--dark);
+}
+
+.ab-wid-side.is-dark h3 {
+  color: #ffffff;
+}
+
+.ab-wid-side.is-dark p {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.ab-wid-side.is-dark .ab-wid-side-icon {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 3px 1px rgba(255, 255, 255, 0.15);
+}
+
+.ab-wid-side.is-dark .ab-wid-side-icon svg {
+  stroke: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .ab-wid-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-wid-main {
+    grid-row: auto;
+    min-height: 220px;
+  }
+}
+
+
 
 /* Skills */
 .ab-skills-grid {
