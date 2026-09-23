@@ -63,7 +63,10 @@ export default function Projects() {
 
           <div className="orbit-center-text">
             <span className="eyebrow">Projects</span>
-            <h2>A collection of websites, web apps, and digital experiences I've built.</h2>
+            <h2>
+              <span className="orbit-text-full">A collection of websites, web apps, and digital experiences I've built.</span>
+              <span className="orbit-text-short">Featured Projects<br />&amp; Digital Work</span>
+            </h2>
           </div>
 
         </div>

@@ -1551,6 +1551,16 @@ button {
   width: 100%;
 }
 
+.footer-contact-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-text-short {
+  display: none;
+}
+
 .footer-btn {
   height: 48px;
   padding: 0 20px;
@@ -2734,6 +2744,70 @@ button {
     width: 75vw;
   }
 
+  /* Compact modern footer for screens <= 500px */
+  .footer {
+    padding: 24px 16px 16px;
+    gap: 10px;
+  }
+
+  .footer-content {
+    gap: 12px;
+  }
+
+  .footer-heading {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .footer-subtext {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .footer-actions {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .footer-contact-group {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .footer-btn {
+    width: 100%;
+    height: 42px;
+    padding: 0 10px;
+    font-size: 13px;
+    justify-content: center;
+    border-radius: var(--radius-s);
+  }
+
+  .footer-text-full {
+    display: none;
+  }
+
+  .footer-text-short {
+    display: inline;
+  }
+
+  .footer-btn-hire {
+    width: 100%;
+    height: 42px;
+    font-size: 13px;
+  }
+
+  .footer-copyright-card {
+    padding: 12px 16px;
+  }
+
+  .footer-copyright-card .copyright {
+    font-size: 11.5px;
+  }
+
   .ab-info-row {
     margin-top: 180px;
   }
@@ -2756,18 +2830,18 @@ button {
 .orbit-hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 2 / 1;
-  min-height: 350px;
+  aspect-ratio: 2.5 / 1;
+  min-height: 270px;
   user-select: none;
   touch-action: none;
   cursor: grab;
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, rgba(0, 0, 0, 0.45) 100%);
+  mask-image: linear-gradient(to bottom, black 85%, rgba(0, 0, 0, 0.45) 100%);
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 48px;
+  padding-bottom: 32px;
 }
 
 .orbit-hero:active {
@@ -2777,7 +2851,7 @@ button {
 .orbit-ring-container {
   position: absolute;
   left: 50%;
-  top: 100%;
+  top: 124%;
   transform: translate(-50%, -50%);
   width: 85%;
   min-width: 650px;
@@ -2845,12 +2919,20 @@ button {
 }
 
 .orbit-center-text h2 {
-  font-size: clamp(24px, 3.5vw, 36px);
+  font-size: clamp(20px, 3.2vw, 32px);
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   color: var(--ink);
   line-height: 1.2;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+}
+
+.orbit-text-short {
+  display: none;
+}
+
+.orbit-text-full {
+  display: inline;
 }
 
 .orbit-center-text p {
@@ -2859,17 +2941,32 @@ button {
   line-height: 1.6;
 }
 
+@media (max-width: 1199px) {
+  .orbit-ring-container {
+    top: 118%;
+  }
+}
+
 @media (max-width: 768px) {
+  .orbit-text-full {
+    display: none;
+  }
+
+  .orbit-text-short {
+    display: inline;
+  }
+
   .orbit-hero {
     aspect-ratio: auto;
     min-height: 280px;
     padding-top: 16px;
     padding-bottom: 24px;
-    -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 98%);
-    mask-image: linear-gradient(to bottom, black 65%, transparent 98%);
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, rgba(0, 0, 0, 0.45) 100%);
+    mask-image: linear-gradient(to bottom, black 85%, rgba(0, 0, 0, 0.45) 100%);
   }
 
   .orbit-ring-container {
+    top: 112%;
     min-width: 480px;
   }
 
@@ -2888,6 +2985,7 @@ button {
   }
 
   .orbit-ring-container {
+    top: 108%;
     min-width: 380px;
   }
 
@@ -2899,8 +2997,8 @@ button {
   }
 
   .orbit-center-text h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    margin-bottom: 6px;
   }
 
   .orbit-center-text p {
@@ -2915,6 +3013,7 @@ button {
   }
 
   .orbit-ring-container {
+    top: 102%;
     min-width: 300px;
   }
 
@@ -2923,8 +3022,9 @@ button {
   }
 
   .orbit-center-text h2 {
-    font-size: 19px;
-    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.25;
+    margin-bottom: 4px;
   }
 
   .orbit-center-text p {

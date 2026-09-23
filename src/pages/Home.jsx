@@ -24,7 +24,7 @@ export default function Home() {
     
     if (track) {
       let offset = 0;
-      const speed = 0.55;
+      const speed = 0.95;
       const tick = () => {
         offset += speed;
         const resetPoint = track.scrollWidth / 2;

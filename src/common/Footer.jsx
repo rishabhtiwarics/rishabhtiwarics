@@ -17,15 +17,19 @@ export default function Footer() {
         </p>
 
         <div className="footer-actions">
-          <a href="mailto:rishabhtiwarics@gmail.com" className="btn btn-light footer-btn">
-            <svg className="icon" aria-hidden="true"><use href="#i-mail" /></svg>
-            <span>rishabhtiwarics@gmail.com</span>
-          </a>
-          <a href="tel:+917974842788" className="btn btn-light footer-btn">
-            <svg className="icon" aria-hidden="true"><use href="#i-phone" /></svg>
-            <span>+91-797-484-2788</span>
-          </a>
-          <Link to="/contact" className="btn btn-dark footer-btn">
+          <div className="footer-contact-group">
+            <a href="mailto:rishabhtiwarics@gmail.com" className="btn btn-light footer-btn footer-btn-email" title="rishabhtiwarics@gmail.com">
+              <svg className="icon" aria-hidden="true"><use href="#i-mail" /></svg>
+              <span className="footer-text-full">rishabhtiwarics@gmail.com</span>
+              <span className="footer-text-short">Email</span>
+            </a>
+            <a href="tel:+917974842788" className="btn btn-light footer-btn footer-btn-phone" title="+91-797-484-2788">
+              <svg className="icon" aria-hidden="true"><use href="#i-phone" /></svg>
+              <span className="footer-text-full">+91-797-484-2788</span>
+              <span className="footer-text-short">Call</span>
+            </a>
+          </div>
+          <Link to="/contact" className="btn btn-dark footer-btn footer-btn-hire">
             <svg className="icon btn-icon" aria-hidden="true"><use href="#i-send" /></svg>
             <span>Hire Me</span>
           </Link>
