@@ -147,4 +147,28 @@ export const projects = [
     live: "https://ministryperfume.vercel.app/",
     github: "",
   },
+  {
+    title: "Veda Electronics",
+    description: "An electronics storefront and brand portal showcasing tech products with a modern interface.",
+    tags: ["React.js", "E-commerce"],
+    image: "",
+    live: "https://veda-electronics.vercel.app/",
+    github: "",
+  },
+  {
+    title: "Third Eye Scent",
+    description: "An artisanal fragrance and luxury scents brand website featuring custom product collections.",
+    tags: ["React.js", "E-commerce"],
+    image: "",
+    live: "https://www.thirdeyescent.com/",
+    github: "",
+  },
+  {
+    title: "Elvare Paris",
+    description: "A premium luxury fragrance storefront crafted with elegance and responsive aesthetics.",
+    tags: ["React.js", "E-commerce"],
+    image: "",
+    live: "https://www.elvareparis.com/",
+    github: "",
+  },
 ];

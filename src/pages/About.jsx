@@ -70,49 +70,25 @@ export default function About() {
           </Link>
         </div>
       </div>
-
       <div className="divider" />
 
-      {/* ═══ INFO CARD ═══ */}
+      {/* ═══ BIZ CARD ═══ */}
       <section className="section">
-        <div className="ab-info-card">
-          <div className="ab-info-head">
-            <h2 className="ab-info-name">{profile.name}</h2>
-            <p className="ab-info-role">{profile.role} — Available for Freelance</p>
-          </div>
-
-          {/* Left column */}
-          <div className="ab-info-col">
-            <div className="ab-info-row-item">
-              <span className="ab-info-label">Age</span>
-              <span className="ab-info-value">24</span>
+        <div className="biz-card">
+          <div className="biz-card-id">
+            <div className="biz-card-avatar">
+              <svg viewBox="0 0 24 24"><polyline points="8 6 2 12 8 18"/><polyline points="16 6 22 12 16 18"/></svg>
             </div>
-            <div className="ab-info-row-item">
-              <span className="ab-info-label">Residence</span>
-              <span className="ab-info-value">Rewa, Madhya Pradesh</span>
-            </div>
-            <div className="ab-info-row-item">
-              <span className="ab-info-label">Freelance</span>
-              <span className="ab-info-value">
-                <span className="ab-status"><span className="ab-dot" /> Available</span>
-              </span>
+            <div>
+              <div className="biz-card-name">Open to freelance work</div>
+              <div className="biz-card-role">Frontend development, done right</div>
             </div>
           </div>
-
-          {/* Right column */}
-          <div className="ab-info-col">
-            <div className="ab-info-row-item">
-              <span className="ab-info-label">Address</span>
-              <span className="ab-info-value">{profile.address}</span>
-            </div>
-            <div className="ab-info-row-item">
-              <span className="ab-info-label">Phone</span>
-              <a className="ab-info-value" href={`tel:${profile.phoneHref}`}>{profile.phone}</a>
-            </div>
-            <div className="ab-info-row-item">
-              <span className="ab-info-label">E-mail</span>
-              <a className="ab-info-value" href={`mailto:${profile.email}`}>{profile.email}</a>
-            </div>
+          <div className="biz-card-contact">
+            <div>Freelance: <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}><span className="status-dot"><span className="status-dot-core"></span></span>Available</span></div>
+            <div>Phone: <span>{profile.phone}</span></div>
+            <div>Email: <span>{profile.email}</span></div>
+            <div>Address: <span>{profile.address}</span></div>
           </div>
         </div>
       </section>
