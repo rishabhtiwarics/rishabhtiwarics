@@ -15,6 +15,7 @@ const orbitImages = [
   "https://www.nirogyamwellness.com/Images/logo.png",
   "https://www.thirdeyescent.com/img/logo/logo.png",
   "https://elvare-paris-frontend.vercel.app/assets/logo.png",
+  "https://venotineperfume.vercel.app/assets/img/logo.png",
   // Repeated to reduce gaps
   "https://lordoffragrance.vercel.app/assets/logo-bhOzWs4J.png",
   "https://scentofsurrender.vercel.app/assets/SOS_Logo_main-Ct7QDk5D.png",
@@ -28,7 +29,8 @@ const orbitImages = [
   "https://astonreed.vercel.app/assets/logo-D89ihoBm.png",
   "https://www.nirogyamwellness.com/Images/logo.png",
   "https://www.thirdeyescent.com/img/logo/logo.png",
-  "https://elvare-paris-frontend.vercel.app/assets/logo.png"
+  "https://elvare-paris-frontend.vercel.app/assets/logo.png",
+  "https://venotineperfume.vercel.app/assets/img/logo.png"
 ];
 
 export default function Projects() {
@@ -40,7 +42,7 @@ export default function Projects() {
           <div className="orbit-ring-container">
             <div className="orbit-ring-spin">
               {orbitImages.map((src, i) => {
-                const needsInvert = src.includes("pulpayurveda.vercel.app") || src.includes("lordoffragrance.vercel.app");
+                const needsInvert = src.includes("pulpayurveda.vercel.app") || src.includes("lordoffragrance.vercel.app") || src.includes("venotineperfume.vercel.app");
                 return (
                   <div 
                     key={i} 

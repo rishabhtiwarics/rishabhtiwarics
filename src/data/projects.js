@@ -12,6 +12,14 @@
 */
 export const projects = [
   {
+    title: "Venotine Perfume",
+    description: "A luxury fragrance brand website built with an elegant aesthetic and seamless dark theme visual identity.",
+    tags: ["React.js", "E-commerce"],
+    image: "",
+    live: "https://venotineperfume.vercel.app/",
+    github: "",
+  },
+  {
     title: "Scent of Surrender",
     description: "A fragrance brand landing page built around a moody, editorial visual identity.",
     tags: ["React.js", "Responsive Design"],
