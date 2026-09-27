@@ -8,17 +8,17 @@ export const profile = {
 };
 
 export const skills = [
-  { name: "HTML", abbr: "H", level: 95 },
-  { name: "CSS", abbr: "C", level: 85 },
-  { name: "Tailwind CSS", abbr: "Tw", level: 80 },
-  { name: "Bootstrap", abbr: "B", level: 90 },
-  { name: "JavaScript", abbr: "JS", level: 65 },
-  { name: "Figma", abbr: "Fg", level: 92 },
-  { name: "React.js", abbr: "Re", level: 80 },
-  { name: "Next.js", abbr: "N", level: 80 },
-  { name: "Redux", abbr: "Rx", level: 75 },
-  { name: "Postman", abbr: "Pm", level: 95 },
-  { name: "Git", abbr: "Git", level: 75 },
+  { name: "HTML", abbr: "H", level: 95, icon: "https://cdn.simpleicons.org/html5/E34F26" },
+  { name: "CSS", abbr: "C", level: 85, icon: "https://cdn.simpleicons.org/css3/1572B6" },
+  { name: "Tailwind", abbr: "Tw", level: 80, icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+  { name: "Bootstrap", abbr: "B", level: 90, icon: "https://cdn.simpleicons.org/bootstrap/7952B3" },
+  { name: "JavaScript", abbr: "JS", level: 65, icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+  { name: "Figma", abbr: "Fg", level: 92, icon: "https://cdn.simpleicons.org/figma/F24E1E" },
+  { name: "React.js", abbr: "Re", level: 80, icon: "https://cdn.simpleicons.org/react/61DAFB" },
+  { name: "Next.js", abbr: "N", level: 80, icon: "https://cdn.simpleicons.org/nextdotjs/000000" },
+  { name: "Redux", abbr: "Rx", level: 75, icon: "https://cdn.simpleicons.org/redux/764ABC" },
+  { name: "Postman", abbr: "Pm", level: 95, icon: "https://cdn.simpleicons.org/postman/FF6C37" },
+  { name: "Git", abbr: "Git", level: 75, icon: "https://cdn.simpleicons.org/git/F05032" },
 ];
 
 export const experience = [

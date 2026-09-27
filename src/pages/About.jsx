@@ -70,20 +70,22 @@ export default function About() {
       {/* ═══ BIZ CARD ═══ */}
       <section className="section">
         <div className="biz-card">
-          <div className="biz-card-id">
-            <div className="biz-card-avatar">
-              <svg viewBox="0 0 24 24"><polyline points="8 6 2 12 8 18"/><polyline points="16 6 22 12 16 18"/></svg>
+          <div className="biz-card-inner">
+            <div className="biz-card-id">
+              <div className="biz-card-avatar">
+                <svg viewBox="0 0 24 24"><polyline points="8 6 2 12 8 18" /><polyline points="16 6 22 12 16 18" /></svg>
+              </div>
+              <div>
+                <div className="biz-card-name">Open to freelance work</div>
+                <div className="biz-card-role">Frontend development, done right</div>
+              </div>
             </div>
-            <div>
-              <div className="biz-card-name">Open to freelance work</div>
-              <div className="biz-card-role">Frontend development, done right</div>
+            <div className="biz-card-contact">
+              <div>Freelance: <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}><span className="status-dot"><span className="status-dot-core"></span></span>Available</span></div>
+              <div>Phone: <span>{profile.phone}</span></div>
+              <div>Email: <span>{profile.email}</span></div>
+              <div>Address: <span>{profile.address}</span></div>
             </div>
-          </div>
-          <div className="biz-card-contact">
-            <div>Freelance: <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}><span className="status-dot"><span className="status-dot-core"></span></span>Available</span></div>
-            <div>Phone: <span>{profile.phone}</span></div>
-            <div>Email: <span>{profile.email}</span></div>
-            <div>Address: <span>{profile.address}</span></div>
           </div>
         </div>
       </section>
@@ -100,7 +102,7 @@ export default function About() {
         <div className="ab-wid-grid">
           <div className="ab-wid-main">
             <div className="ab-wid-main-icon">
-              <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
             </div>
             <h3>Web Development</h3>
             <p>Building performant React &amp; Next.js apps that scale — from landing pages to full-featured platforms.</p>
@@ -108,7 +110,7 @@ export default function About() {
 
           <div className="ab-wid-side">
             <div className="ab-wid-side-icon">
-              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg>
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18" /></svg>
             </div>
             <h3>UI / UX Design</h3>
             <p>Pixel-perfect Figma designs with sharp typography, color, and interaction principles.</p>
@@ -116,7 +118,7 @@ export default function About() {
 
           <div className="ab-wid-side is-dark">
             <div className="ab-wid-side-icon">
-              <svg viewBox="0 0 24 24"><path d="M4 17V7a2 2 0 0 1 2-2h6l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M4 17V7a2 2 0 0 1 2-2h6l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" /></svg>
             </div>
             <h3>Frontend Engineering</h3>
             <p>Clean, maintainable code using modern JS, TypeScript, Redux, and component-driven architecture.</p>
@@ -126,7 +128,7 @@ export default function About() {
         <div className="ab-wid-full">
           <div className="ab-wid-side">
             <div className="ab-wid-side-icon">
-              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /></svg>
             </div>
             <h3>Responsive Layouts</h3>
             <p>Fluid layouts on every device using CSS Grid, Flexbox, Tailwind, and Bootstrap.</p>
@@ -135,21 +137,38 @@ export default function About() {
       </section>
 
       <div className="divider" />
+
+      {/* ═══ MY TOOLKIT / SKILLS & TOOLS ═══ */}
       <section className="section">
-        <div className="section-top">
-          <span className="eyebrow">My Toolkit</span>
-          <h2 className="ab-section-h2">Well-versed in React, Next.js,<br />Figma, HTML &amp; CSS.</h2>
-        </div>
-        <div className="ab-skills-grid">
-          {skills.map(sk => (
-            <div key={sk.name} className="ab-skill-card">
-              <span className="ab-skill-name">{sk.name}</span>
-              <div className="ab-skill-bar">
-                <div className="ab-skill-fill" style={{ width: `${sk.level}%` }} />
-              </div>
-              <span className="ab-skill-pct">{sk.level}%</span>
+        <div className="mh">
+          <div className="mh-row">
+            <h2 className="mh-word">MY TOOLKIT</h2>
+            <div className="mh-desc-col">
+              <p className="mh-desc">
+                Well-versed in React, Next.js, Figma, HTML &amp; CSS — these are the tools I use every day
+              </p>
+              <div className="mh-desc-rule"></div>
             </div>
-          ))}
+          </div>
+          <div className="mh-bottom">
+            <span className="eyebrow mh-label">Tech Stack</span>
+            <h2 className="mh-word--full">MODERN WEB STACK &amp; CREATIVE TOOLS</h2>
+          </div>
+        </div>
+
+        <div className="chips-section">
+          <div className="chip-row">
+            {skills.map((sk) => (
+              <div key={sk.name} className="skill-chip">
+                <div className="skill-chip-inner">
+                  <span className="dot">
+                    <img src={sk.icon} alt={sk.name} />
+                  </span>
+                  {sk.name} <span className="pct">{sk.level}%</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -191,25 +210,7 @@ export default function About() {
         </div>
       </section>
 
-      <div className="divider" />
 
-      {/* ═══ BOTTOM CTA ═══ */}
-      <section className="section ab-cta-section">
-        <p className="ab-cta-sup">Ready to build something?</p>
-        <h2 className="ab-cta-heading">
-          Let's work<br />
-          <span className="ab-cta-ghost">together.</span>
-        </h2>
-        <div className="ab-cta-btns">
-          <Link to="/contact" className="btn btn-dark">
-            <svg className="icon btn-icon" aria-hidden="true"><use href="#i-send" /></svg>
-            <span>Send a Message</span>
-          </Link>
-          <a href={`mailto:${profile.email}`} className="btn btn-light">
-            <span>{profile.email}</span>
-          </a>
-        </div>
-      </section>
     </>
   );
 }

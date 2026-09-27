@@ -2376,31 +2376,66 @@ button {
   animation: ab-fadeUp .9s .3s ease both;
 }
 
-/* Business card layout with linear gradient border */
 .biz-card {
-  width: 100%;
-  background: var(--panel-2);
-  border: 1px solid transparent;
-  border-image: linear-gradient(135deg, rgba(17, 17, 18, 0.25) 0%, rgba(228, 228, 231, 0.8) 50%, rgba(17, 17, 18, 0.15) 100%) 1;
+  position: relative;
   border-radius: var(--radius-l);
-  padding: 28px 32px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.03);
+  padding: 2px;
+  isolation: isolate;
+  width: 100%;
+}
+
+.biz-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(from var(--angle),
+      transparent 0deg,
+      transparent 250deg,
+      var(--dark-2) 300deg,
+      var(--dark) 325deg,
+      #ffffff 345deg,
+      transparent 360deg);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: spin 3.2s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.biz-card::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--angle),
+      transparent 0deg,
+      transparent 260deg,
+      rgba(17, 17, 18, .45) 320deg,
+      transparent 360deg);
+  filter: blur(8px);
+  animation: spin 3.2s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .9;
+}
+
+.biz-card-inner {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-}
-
-/* Fallback for rounded corners with linear gradient border */
-@supports (background-origin: border-box) {
-  .biz-card {
-    border: 1px solid transparent;
-    background-image: linear-gradient(var(--panel-2), var(--panel-2)),
-                      linear-gradient(135deg, rgba(17, 17, 18, 0.3) 0%, rgba(228, 228, 231, 0.9) 45%, rgba(17, 17, 18, 0.2) 100%);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-  }
+  padding: 28px 32px;
+  background: var(--chip);
+  border-radius: calc(var(--radius-l) - 2px);
+  color: var(--ink);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.03);
+  width: 100%;
 }
 
 .biz-card-id {
@@ -2462,7 +2497,7 @@ button {
 }
 
 @media (max-width: 900px) {
-  .biz-card {
+  .biz-card-inner {
     padding: 24px 22px;
     flex-direction: column;
     align-items: flex-start;
@@ -2478,7 +2513,7 @@ button {
 }
 
 @media (max-width: 425px) {
-  .biz-card {
+  .biz-card-inner {
     padding: 20px 16px;
   }
 }
@@ -2518,13 +2553,13 @@ button {
   overflow: hidden;
   min-height: 280px;
   background-image:
-    linear-gradient(180deg, rgba(17,17,18,.35), rgba(17,17,18,.9)),
+    linear-gradient(180deg, rgba(17, 17, 18, .35), rgba(17, 17, 18, .9)),
     url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80&auto=format&fit=crop");
   background-size: cover;
   background-position: center;
 }
 
-.ab-wid-main > * {
+.ab-wid-main>* {
   position: relative;
   z-index: 1;
 }
@@ -2648,48 +2683,7 @@ button {
 
 
 
-/* Skills */
-.ab-skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  gap: 12px;
-  width: 100%;
-}
 
-.ab-skill-card {
-  background: var(--panel-2);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-s);
-  padding: 16px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.ab-skill-name {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--ink);
-}
-
-.ab-skill-bar {
-  height: 4px;
-  background: var(--line);
-  border-radius: 99px;
-  overflow: hidden;
-}
-
-.ab-skill-fill {
-  height: 100%;
-  border-radius: 99px;
-  background: var(--ink);
-}
-
-.ab-skill-pct {
-  font-size: 11px;
-  color: var(--ink-faint);
-  font-weight: 600;
-}
 
 /* Timeline */
 .ab-tl-grid {
@@ -2746,41 +2740,193 @@ button {
   font-weight: 500;
 }
 
-/* Bottom CTA */
-.ab-cta-section {
-  text-align: center;
-  padding: 64px 40px;
-}
-
-.ab-cta-sup {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin-bottom: 16px;
-}
-
-.ab-cta-heading {
-  font-size: clamp(32px, 6vw, 80px);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  color: var(--ink);
-  margin: 0 0 32px;
-}
-
-.ab-cta-ghost {
-  color: transparent;
-  -webkit-text-stroke: 1.4px #c8c6c0;
-}
-
-.ab-cta-btns {
+/* ===== MY TOOLKIT HEADING & CHIPS ===== */
+.mh-row {
   display: flex;
-  justify-content: center;
-  gap: 12px;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
   flex-wrap: wrap;
 }
+
+.mh-word,
+.mh-word--full {
+  font-family: var(--font);
+  font-size: clamp(22px, 3.5vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.mh-word {
+  white-space: nowrap;
+}
+
+.mh-word--full {
+  width: 100%;
+}
+
+.mh-desc-col {
+  max-width: 250px;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.mh-desc {
+  font-family: "Quicksand", var(--font);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.mh-desc-rule {
+  width: 60%;
+  height: 2px;
+  border-radius: 99px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, var(--ink) 0%, rgba(9, 9, 11, 0.1) 100%);
+}
+
+.mh-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 180px;
+  margin-top: 0;
+}
+
+.mh-label {
+  margin-bottom: 2px;
+}
+
+@media (max-width: 768px) {
+  .mh-bottom {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .mh-word {
+    white-space: normal;
+  }
+
+  .mh-desc-col {
+    max-width: 100%;
+  }
+}
+
+/* Chips section */
+.chips-section {
+  margin-top: 20px;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.skill-chip {
+  position: relative;
+  border-radius: 100px;
+  padding: 2px;
+  isolation: isolate;
+}
+
+.skill-chip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(from var(--angle),
+      transparent 0deg,
+      transparent 250deg,
+      var(--dark-2) 300deg,
+      var(--dark) 325deg,
+      #ffffff 345deg,
+      transparent 360deg);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: spin 3.2s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.skill-chip::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--angle),
+      transparent 0deg,
+      transparent 260deg,
+      rgba(17, 17, 18, .45) 320deg,
+      transparent 360deg);
+  filter: blur(8px);
+  animation: spin 3.2s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .9;
+}
+
+@keyframes spin {
+  to {
+    --angle: 360deg;
+  }
+}
+
+.skill-chip-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px 8px 8px;
+  background: var(--chip);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.skill-chip .dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.skill-chip .dot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.skill-chip .pct {
+  color: var(--ink-soft);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+
 
 /* Responsive */
 @media (max-width: 768px) {
