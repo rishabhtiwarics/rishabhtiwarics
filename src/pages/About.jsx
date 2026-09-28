@@ -157,17 +157,29 @@ export default function About() {
         </div>
 
         <div className="chips-section">
-          <div className="chip-row">
-            {skills.map((sk) => (
-              <div key={sk.name} className="skill-chip">
-                <div className="skill-chip-inner">
-                  <span className="dot">
-                    <img src={sk.icon} alt={sk.name} />
-                  </span>
-                  {sk.name} <span className="pct">{sk.level}%</span>
+          <div className="chip-marquee">
+            <div className="chip-track">
+              {skills.map((sk) => (
+                <div key={sk.name} className="skill-chip">
+                  <div className="skill-chip-inner">
+                    <span className="dot">
+                      <img src={sk.icon} alt={sk.name} />
+                    </span>
+                    {sk.name} <span className="pct">{sk.level}%</span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+              {skills.map((sk) => (
+                <div key={`dup-${sk.name}`} className="skill-chip">
+                  <div className="skill-chip-inner">
+                    <span className="dot">
+                      <img src={sk.icon} alt={sk.name} />
+                    </span>
+                    {sk.name} <span className="pct">{sk.level}%</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

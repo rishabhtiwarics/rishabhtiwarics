@@ -2881,16 +2881,17 @@ button {
   flex-direction: column;
   gap: 4px;
   padding-left: 180px;
-  margin-top: 0;
+  margin-top: 4px;
 }
 
 .mh-label {
   margin-bottom: 2px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .mh-bottom {
     padding-left: 0;
+    margin-top: 4px;
   }
 }
 
@@ -2904,15 +2905,45 @@ button {
   }
 }
 
-/* Chips section */
+/* Chips section with marquee scrolling loop */
 .chips-section {
-  margin-top: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
 }
 
-.chip-row {
+.chip-marquee {
   display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+.chip-track {
+  display: flex;
+  align-items: center;
   gap: 14px;
+  white-space: nowrap;
+  animation: chip-scroll 24s linear infinite;
+  width: max-content;
+}
+
+.chip-marquee:hover .chip-track {
+  animation-play-state: paused;
+}
+
+@keyframes chip-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 7px));
+  }
 }
 
 @property --angle {
@@ -3399,5 +3430,44 @@ button {
   .orbit-center-text p {
     font-size: 12px;
     line-height: 1.5;
+  }
+}
+
+/* =========================================================
+   640px RESPONSIVE SPACING IMPROVEMENTS
+========================================================= */
+@media (max-width: 640px) {
+  .mobile-header {
+    margin-bottom: 16px;
+  }
+
+  .sidebar-wrap {
+    padding: 16px 12px 16px;
+  }
+
+  .section {
+    padding: 32px 16px;
+    gap: 28px;
+  }
+
+  .divider {
+    margin: 16px 0;
+  }
+
+  .mh-bottom {
+    margin-top: 12px;
+    gap: 6px;
+  }
+
+  .chips-section {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .ab-wid-grid,
+  .ab-wid-full {
+    margin-bottom: 20px;
   }
 }
