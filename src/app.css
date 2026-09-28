@@ -973,172 +973,7 @@ button {
   line-height: 1.5;
 }
 
-/* =========================================================
-   EXPERIENCE
-========================================================= */
-.timeline-card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-xl);
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-}
 
-.timeline-roles {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 640px;
-}
-
-.timeline-role {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 20px;
-  align-items: start;
-  padding: 18px 0;
-}
-
-.timeline-left {
-  text-align: right;
-}
-
-.timeline-title {
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.timeline-dates {
-  font-size: 12px;
-  color: var(--ink-faint);
-  margin-top: 2px;
-}
-
-.timeline-marker {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--dark);
-  margin-top: 6px;
-}
-
-.timeline-desc {
-  font-size: 13px;
-  color: var(--ink-soft);
-  line-height: 1.5;
-}
-
-.timeline-connector {
-  height: 1px;
-  background: var(--line);
-  width: calc(100% - 30px);
-  margin: 0 auto;
-}
-
-/* =========================================================
-   TOOLKITS
-========================================================= */
-.toolkits-heading {
-  font-size: clamp(20px, 2.4vw, 26px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.5;
-  max-width: 900px;
-}
-
-.toolkits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-.tool-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-l);
-  padding: 18px 20px;
-}
-
-.tool-left {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex: 1;
-  min-width: 0;
-}
-
-.tool-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-s);
-  background: var(--dark);
-  color: #fff;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  flex-shrink: 0;
-}
-
-.tool-text {
-  flex: 1;
-  min-width: 0;
-  padding-right: 16px;
-}
-
-.tool-bar {
-  height: 4px;
-  margin-top: 8px;
-  border-radius: 4px;
-  background: rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-}
-
-.tool-bar span {
-  display: block;
-  height: 100%;
-  border-radius: 4px;
-  background: var(--dark);
-  transform-origin: left;
-  animation: barGrow 0.9s ease both;
-}
-
-@keyframes barGrow {
-  from {
-    transform: scaleX(0);
-  }
-
-  to {
-    transform: scaleX(1);
-  }
-}
-
-.tool-name {
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.tool-desc {
-  font-size: 12px;
-  color: var(--ink-soft);
-  margin-top: 2px;
-}
-
-.tool-level {
-  padding: 8px 16px;
-  border-radius: 50px;
-  background: rgba(0, 0, 0, 0.05);
-  font-size: 13px;
-  font-weight: 600;
-}
 
 
 /* =========================================================
@@ -1167,8 +1002,6 @@ button {
 /* Resume Page Header Style */
 .res-header-stage {
   position: relative;
-  width: 100%;
-  max-width: 828px;
   margin: 0 auto;
   padding: 10px 16px 20px;
   display: flex;
@@ -2941,6 +2774,7 @@ button {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(calc(-50% - 7px));
   }
