@@ -136,53 +136,7 @@ export default function About() {
         </div>
       </section>
 
-      <div className="divider" />
 
-      {/* ═══ MY TOOLKIT / SKILLS & TOOLS ═══ */}
-      <section className="section">
-        <div className="mh">
-          <div className="mh-row">
-            <h2 className="mh-word">MY TOOLKIT</h2>
-            <div className="mh-desc-col">
-              <p className="mh-desc">
-                Well-versed in React, Next.js, Figma, HTML &amp; CSS — these are the tools I use every day
-              </p>
-              <div className="mh-desc-rule"></div>
-            </div>
-          </div>
-          <div className="mh-bottom">
-            <span className="eyebrow mh-label">Tech Stack</span>
-            <h2 className="mh-word--full">MODERN WEB STACK &amp; CREATIVE TOOLS</h2>
-          </div>
-        </div>
-
-        <div className="chips-section">
-          <div className="chip-marquee">
-            <div className="chip-track">
-              {skills.map((sk) => (
-                <div key={sk.name} className="skill-chip">
-                  <div className="skill-chip-inner">
-                    <span className="dot">
-                      <img src={sk.icon} alt={sk.name} />
-                    </span>
-                    {sk.name} <span className="pct">{sk.level}%</span>
-                  </div>
-                </div>
-              ))}
-              {skills.map((sk) => (
-                <div key={`dup-${sk.name}`} className="skill-chip">
-                  <div className="skill-chip-inner">
-                    <span className="dot">
-                      <img src={sk.icon} alt={sk.name} />
-                    </span>
-                    {sk.name} <span className="pct">{sk.level}%</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       <div className="divider" />
 
@@ -221,8 +175,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-
     </>
   );
 }

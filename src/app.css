@@ -3305,3 +3305,204 @@ button {
     margin-bottom: 20px;
   }
 }
+
+/* =========================================================
+   RES-EDU: Education Horizontal Timeline
+========================================================= */
+.res-edu-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.res-edu-stage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 160px 0 160px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.res-edu-stage::-webkit-scrollbar {
+  display: none;
+}
+
+.res-edu-tl {
+  position: relative;
+  display: flex;
+  height: 48px;
+  align-items: center;
+}
+
+.res-edu-entry {
+  position: relative;
+  width: 220px;
+  height: 48px;
+  margin-left: -16px;
+  z-index: var(--z);
+  flex-shrink: 0;
+}
+
+.res-edu-entry:first-child {
+  margin-left: 0;
+}
+
+.res-edu-seg {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 22px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  box-shadow: 0 0 0 6px var(--paper);
+}
+
+.res-edu-entry:first-child .res-edu-seg {
+  padding-left: 0;
+  box-shadow: none;
+  border-radius: 10px 24px 24px 10px;
+}
+
+.res-edu-seg.res-edu-p {
+  background: var(--dark);
+  color: #ffffff;
+}
+
+.res-edu-seg.res-edu-c {
+  background: var(--line);
+  color: var(--ink-soft);
+}
+
+.res-edu-item {
+  position: absolute;
+  left: 132px;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+
+.res-edu-item.res-edu-dn {
+  top: 48px;
+}
+
+.res-edu-up {
+  --lc: var(--dark);
+}
+
+.res-edu-dn {
+  --lc: var(--line);
+}
+
+.res-edu-txt {
+  position: absolute;
+  right: 14px;
+  width: 200px;
+  text-align: right;
+}
+
+.res-edu-up .res-edu-txt {
+  bottom: 30px;
+}
+
+.res-edu-dn .res-edu-txt {
+  top: 30px;
+}
+
+.res-edu-txt h3 {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 8px 4px 0;
+  text-align: center;
+  color: var(--ink);
+}
+
+.res-edu-txt p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.res-edu-txt p b {
+  display: block;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.res-edu-ic {
+  position: absolute;
+  left: -23px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 0 5px var(--paper);
+}
+
+.res-edu-up .res-edu-ic {
+  top: -153px;
+  background: var(--dark);
+  color: #ffffff;
+}
+
+.res-edu-dn .res-edu-ic {
+  top: 107px;
+  background: var(--line);
+  color: var(--ink-soft);
+}
+
+.res-edu-ic svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* straight connector lines */
+.res-edu-item::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  width: 4px;
+  height: 107px;
+  background: var(--lc);
+}
+
+.res-edu-up::before {
+  top: -107px;
+}
+
+.res-edu-dn::before {
+  top: 0;
+}
+
+/* joint dot on the bar */
+.res-edu-item::after {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: -6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--lc);
+  box-shadow: 0 0 0 3px var(--paper);
+}
+
+/* Responsive adjustments for mobile / tablet */
+@media (max-width: 768px) {
+  .res-edu-stage {
+    justify-content: flex-start;
+  }
+}
