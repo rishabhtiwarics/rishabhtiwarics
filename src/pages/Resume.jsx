@@ -24,25 +24,19 @@ export default function Resume() {
   return (
     <>
       <section className="section page-head">
-        <div className="section-top">
-          <span className="eyebrow">Resume</span>
-          <h1 className="page-title">My Resume</h1>
-        </div>
-      </section>
-
-      <div className="divider"></div>
-
-      <section className="section">
-        <div className="section-top section-top--center">
-          <span className="eyebrow">Experience</span>
-          <h2 className="section-heading center">Where I've worked</h2>
-        </div>
-        <div className="timeline-card">
-          <Timeline items={experience} />
-          <Link to="/contact" className="btn btn-dark btn-timeline">
-            <svg className="icon btn-icon" aria-hidden="true"><use href="#i-send" /></svg>
-            <span>Hire Me</span>
-          </Link>
+        <div className="res-header-stage">
+          <h1 className="res-header-title res-header-front" aria-label="My Resume.">
+            <span className="res-header-q" aria-hidden="true">&quot;</span>
+            <span className="res-header-box">My</span>
+            <span>Resume</span>
+            <span className="res-header-dot" aria-hidden="true">.</span>
+          </h1>
+          <div className="res-header-title res-header-ghost" aria-hidden="true">
+            <span className="res-header-q">&quot;</span>
+            <span className="res-header-box">My</span>
+            <span>Resume</span>
+            <span className="res-header-dot">.</span>
+          </div>
         </div>
       </section>
 

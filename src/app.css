@@ -1164,6 +1164,93 @@ button {
   padding-top: 56px;
 }
 
+/* Resume Page Header Style */
+.res-header-stage {
+  position: relative;
+  width: 100%;
+  max-width: 828px;
+  margin: 0 auto;
+  padding: 10px 16px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.res-header-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.22em;
+  font-size: clamp(30px, 4.8vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.res-header-front {
+  position: relative;
+  z-index: 2;
+  color: var(--ink);
+}
+
+.res-header-q,
+.res-header-dot {
+  color: var(--ink-faint);
+}
+
+.res-header-q {
+  align-self: flex-start;
+  display: inline-block;
+  font-size: 0.7em;
+  font-weight: 800;
+  line-height: 1;
+  margin: 0.1em -0.06em 0 0;
+  transform: skewX(-14deg);
+}
+
+.res-header-dot {
+  margin-left: -0.18em;
+}
+
+.res-header-box {
+  display: inline-block;
+  background: var(--dark);
+  color: #ffffff;
+  padding: 0.02em 0.16em 0.08em;
+  border-radius: var(--radius-xs);
+  transform: rotate(-4deg);
+  box-shadow: inset 0 3px 1px rgba(255, 255, 255, 0.1);
+}
+
+.res-header-ghost {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  z-index: 1;
+  pointer-events: none;
+  transform: translateY(-50%) translate(-3%, 20%) scale(1.4);
+  color: transparent;
+  -webkit-text-stroke: 1.4px var(--ghost-line, #c8c6c0);
+  opacity: 0.35;
+}
+
+.res-header-ghost .res-header-q,
+.res-header-ghost .res-header-dot {
+  color: transparent;
+}
+
+.res-header-ghost .res-header-box {
+  background: transparent;
+  color: transparent;
+  border: 1.4px solid var(--ghost-line, #c8c6c0);
+  box-shadow: none;
+}
+
+
+
 .page-title {
   font-size: clamp(36px, 5vw, 56px);
   font-weight: 700;
