@@ -3371,8 +3371,8 @@ button {
 }
 
 .res-edu-seg.res-edu-p {
-  background: var(--dark);
-  color: #ffffff;
+  background: var(--line);
+  color: var(--ink-soft);
 }
 
 .res-edu-seg.res-edu-c {
@@ -3449,8 +3449,8 @@ button {
 
 .res-edu-up .res-edu-ic {
   top: -153px;
-  background: var(--dark);
-  color: #ffffff;
+  background: var(--line);
+  color: var(--ink-soft);
 }
 
 .res-edu-dn .res-edu-ic {
@@ -3476,7 +3476,7 @@ button {
   left: -2px;
   width: 4px;
   height: 107px;
-  background: var(--lc);
+  background: var(--line);
 }
 
 .res-edu-up::before {
@@ -3496,7 +3496,7 @@ button {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--lc);
+  background: var(--line);
   box-shadow: 0 0 0 3px var(--paper);
 }
 
