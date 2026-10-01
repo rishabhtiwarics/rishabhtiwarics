@@ -138,43 +138,7 @@ export default function About() {
 
 
 
-      <div className="divider" />
 
-      {/* ═══ EXPERIENCE & EDUCATION ═══ */}
-      <section className="section">
-        <div className="ab-tl-grid">
-          <div>
-            <span className="eyebrow ab-tl-eyebrow">Experience</span>
-            <div className="ab-timeline">
-              {experience.map((ex, i) => (
-                <div key={i} className="ab-tl-item">
-                  <div className="ab-tl-dot" />
-                  <div>
-                    <p className="ab-tl-title">{ex.title}</p>
-                    <p className="ab-tl-place">{ex.place}</p>
-                    <p className="ab-tl-dates">{ex.dates}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <span className="eyebrow ab-tl-eyebrow">Education</span>
-            <div className="ab-timeline">
-              {education.map((ed, i) => (
-                <div key={i} className="ab-tl-item">
-                  <div className="ab-tl-dot" />
-                  <div>
-                    <p className="ab-tl-title">{ed.title}</p>
-                    <p className="ab-tl-place">{ed.place}</p>
-                    <p className="ab-tl-dates">{ed.dates}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

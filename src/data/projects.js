@@ -12,6 +12,14 @@
 */
 export const projects = [
   {
+    title: "Lord of Fragrance",
+    description: "An elegant e-commerce platform designed for premium fragrance products, featuring a luxurious and modern user interface.",
+    tags: ["React.js", "E-commerce", "UI/UX"],
+    image: "",
+    live: "https://lordoffragrance.vercel.app/",
+    github: "",
+  },
+  {
     title: "Venotine Perfume",
     description: "A luxury fragrance brand website built with an elegant aesthetic and seamless dark theme visual identity.",
     tags: ["React.js", "E-commerce"],
