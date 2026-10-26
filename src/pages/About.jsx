@@ -60,11 +60,19 @@ export default function About() {
             <svg className="icon btn-icon" aria-hidden="true"><use href="#i-send" /></svg>
             <span>Hire Me</span>
           </Link>
-          <Link to="/projects" className="btn btn-light">
-            <span>View Work →</span>
-          </Link>
+          <span className="btn btn-light">
+            <span>Who I&rsquo;m</span>
+          </span>
         </div>
       </div>
+
+      {/* Who I'm */}
+      <div className="ab-who">
+        <p className="ab-who-text">
+          Experienced frontend developer with passion for creating attractive and interactive websites meeting customer needs and exceeding expectations. Well-versed in developing React js and Next.js based websites and web app.
+        </p>
+      </div>
+
       <div className="divider" />
 
       {/* ═══ BIZ CARD ═══ */}
@@ -105,7 +113,7 @@ export default function About() {
               <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
             </div>
             <h3>Web Development</h3>
-            <p>Building performant React &amp; Next.js apps that scale — from landing pages to full-featured platforms.</p>
+            <p>Experienced in creating responsive, user-centric websites and delivering tailored solutions. Focused on enhancing web performance and providing engaging user experiences.</p>
           </div>
 
           <div className="ab-wid-side">

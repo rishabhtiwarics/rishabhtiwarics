@@ -1996,12 +1996,7 @@ button {
   }
 }
 
-@media (max-width: 900px) {
-  .mobile-bar {
-    padding: 0 16px;
-    width: calc(100% - 32px);
-  }
-}
+
 
 /* =========================================================
    ABOUT PAGE — Bazil-style hero
@@ -3504,5 +3499,226 @@ button {
 @media (max-width: 768px) {
   .res-edu-stage {
     justify-content: flex-start;
+  }
+}
+
+/* ≤991px — vertical timeline */
+@media (max-width: 991px) {
+  .res-edu-stage {
+    display: block;
+    padding: 0px 0 0px;
+    overflow: visible;
+  }
+
+  .res-edu-tl {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    padding-left: 32px;
+    gap: 24px;
+  }
+
+  .res-edu-tl::before {
+    display: none;
+  }
+
+  /* connector from this dot to the next one — none after the last entry */
+  .res-edu-entry::after {
+    content: "";
+    position: absolute;
+    left: -22px;
+    top: 18px;
+    bottom: -42px;
+    width: 4px;
+    border-radius: 4px;
+    background: var(--line);
+    z-index: -1;
+  }
+
+  .res-edu-entry:last-child::after {
+    display: none;
+  }
+
+  .res-edu-entry,
+  .res-edu-entry:first-child {
+    width: auto;
+    height: auto;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .res-edu-entry::before {
+    content: "";
+    position: absolute;
+    left: -26px;
+    top: 12px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--dark);
+    box-shadow: 0 0 0 4px var(--paper);
+  }
+
+  .res-edu-seg,
+  .res-edu-entry:first-child .res-edu-seg {
+    width: auto;
+    height: 36px;
+    padding: 0 18px;
+    border-radius: 18px;
+    box-shadow: none;
+    font-size: 15px;
+  }
+
+  .res-edu-item,
+  .res-edu-item.res-edu-dn {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--paper);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .res-edu-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .res-edu-item::before,
+  .res-edu-item::after {
+    display: none;
+  }
+
+  .res-edu-ic,
+  .res-edu-up .res-edu-ic,
+  .res-edu-dn .res-edu-ic {
+    position: static;
+    order: -1;
+    flex-shrink: 0;
+    box-shadow: none;
+  }
+
+  .res-edu-txt {
+    position: static;
+    width: auto;
+    text-align: left;
+  }
+
+  .res-edu-txt h3 {
+    margin: 0 0 4px;
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .res-edu-txt p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .res-edu-tl {
+    padding-left: 26px;
+    gap: 20px;
+  }
+
+  .res-edu-entry::before {
+    left: -24px;
+  }
+
+  .res-edu-entry::after {
+    left: -20px;
+    bottom: -38px;
+  }
+
+  .res-edu-item,
+  .res-edu-item.res-edu-dn {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .res-edu-ic,
+  .res-edu-up .res-edu-ic,
+  .res-edu-dn .res-edu-ic {
+    width: 40px;
+    height: 40px;
+  }
+
+  .res-edu-ic svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .res-edu-txt h3 {
+    font-size: 15px;
+  }
+
+  .res-edu-txt p {
+    font-size: 13px;
+  }
+}
+
+/* ═══ About — Who I'm ═══ */
+.ab-who {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 720px;
+  margin: 16px auto 0;
+  padding: 0 20px 56px;
+}
+
+.ab-who-text {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  opacity: 0.8;
+}
+
+/* Large tablets / small laptops */
+@media (max-width: 1024px) {
+  .ab-who {
+    max-width: 640px;
+    padding-bottom: 48px;
+  }
+
+  .ab-who-text {
+    font-size: 1.1rem;
+  }
+}
+
+/* md — tablets */
+@media (max-width: 768px) {
+  .ab-who {
+    max-width: none;
+    width: auto;
+    margin: 12px 0 0;
+    padding: 0 24px 40px;
+  }
+
+  .ab-who-text {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}
+
+/* sm — mobiles */
+@media (max-width: 576px) {
+  .ab-who {
+    margin-top: 8px;
+    padding: 0 16px 32px;
+  }
+
+  .ab-who-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 }
