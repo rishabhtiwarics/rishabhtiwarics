@@ -13,6 +13,13 @@ const eduTimelineIcons = {
   cap: <path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c3 3 9 3 12 0v-5" />
 };
 
+const expData = [
+  { role: "Frontend Developer", company: "Launchveda", date: "June 2026 – Present", current: true },
+  { role: "Frontend Developer", company: "Mittal Technologies", date: "November 2025 – February 2026" },
+  { role: "Web Developer", company: "Star Reify Tech Solution", date: "April 2024 – October 2024" },
+  { role: "Junior Developer", company: "Technolitics India, Raipur", date: "January 2022 – May 2023" }
+];
+
 export default function Resume() {
   return (
     <>
@@ -92,6 +99,43 @@ export default function Resume() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      {/* ═══ WORK EXPERIENCE SECTION ═══ */}
+      <section className="section res-exp-wrap">
+        <div className="mh">
+          <div className="mh-row">
+            <h2 className="mh-word">EXPERIENCE</h2>
+            <div className="mh-desc-col">
+              <p className="mh-desc">
+                Professional roles where I built and shipped modern web products
+              </p>
+              <div className="mh-desc-rule"></div>
+            </div>
+          </div>
+          <div className="mh-bottom">
+            <span className="eyebrow mh-label">Experience</span>
+            <h2 className="mh-word--full">WORK HISTORY &amp; ROLES</h2>
+          </div>
+        </div>
+
+        <div className="res-exp-list">
+          {expData.map((job, idx) => (
+            <article className={`res-exp-card${job.current ? " is-current" : ""}`} key={idx}>
+              <span className="res-exp-num">{String(idx + 1).padStart(2, "0")}</span>
+              <div className="res-exp-body">
+                <h3 className="res-exp-role">{job.role}</h3>
+                <p className="res-exp-company">{job.company}</p>
+              </div>
+              <span className="res-exp-date">
+                {job.current && <span className="status-dot"><span className="status-dot-core"></span></span>}
+                {job.date}
+              </span>
+            </article>
+          ))}
         </div>
       </section>
 

@@ -3722,3 +3722,168 @@ button {
     line-height: 1.6;
   }
 }
+
+/* =========================================================
+   RES-EXP: Work Experience
+========================================================= */
+.res-exp-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+  margin-top: 32px;
+}
+
+.res-exp-card {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 26px 20px;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  transition: background 0.3s ease, padding 0.3s ease;
+}
+
+.res-exp-card:hover {
+  background: var(--panel-2);
+  padding-left: 28px;
+}
+
+.res-exp-num {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}
+
+.res-exp-role {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.res-exp-company {
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+.res-exp-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+  background: var(--paper);
+}
+
+.res-exp-card.is-current .res-exp-date {
+  background: var(--dark);
+  border-color: var(--dark);
+  color: var(--paper);
+}
+
+@media (max-width: 1200px) {
+  .res-exp-card {
+    grid-template-columns: 56px 1fr auto;
+    gap: 20px;
+    padding: 24px 16px;
+  }
+
+  .res-exp-role {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 991px) {
+  .res-exp-card {
+    grid-template-columns: 48px 1fr;
+    gap: 8px 16px;
+    padding: 22px 12px;
+  }
+
+  .res-exp-card:hover {
+    padding-left: 18px;
+  }
+
+  .res-exp-date {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 6px;
+  }
+
+  .res-exp-role {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 768px) {
+  .res-exp-card {
+    grid-template-columns: 40px 1fr;
+    padding: 20px 10px;
+  }
+
+  .res-exp-num {
+    font-size: 14px;
+  }
+
+  .res-exp-role {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .res-exp-list {
+    margin-top: 20px;
+  }
+
+  .res-exp-card {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 18px 4px;
+  }
+
+  .res-exp-card:hover {
+    padding-left: 10px;
+  }
+
+  .res-exp-date {
+    grid-column: 1;
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .res-exp-role {
+    font-size: 17px;
+  }
+
+  .res-exp-company {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .res-exp-card {
+    padding: 16px 2px;
+  }
+
+  .res-exp-role {
+    font-size: 16px;
+  }
+
+  .res-exp-company {
+    font-size: 13px;
+  }
+
+  .res-exp-date {
+    font-size: 12px;
+    white-space: normal;
+  }
+}
